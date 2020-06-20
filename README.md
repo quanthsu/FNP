@@ -1,15 +1,15 @@
 # FNP task1
-* Binary classification task
+Binary classification task
 
-*Text section contains a causal relation => 1, Otherwise => 0
+Text section contains a causal relation => 1, Otherwise => 0
 
-*Unbalanced dataset, only about 7% 1s
+Unbalanced dataset, only about 7% 1s
 
-*10837 training data & 2710 testing data
+10837 training data & 2710 testing data
 
-*Submit your result on Kaggle
+Submit your result on Kaggle
 
-*Read data descriptions and download the dataset from kaggle
+Read data descriptions and download the dataset from kaggle
 
 ## Code
 
@@ -26,4 +26,4 @@
 
 ## Experiment environment
 
-OS : Debian 9.11
+* OS : Debian 9.11
