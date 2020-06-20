@@ -27,3 +27,6 @@ Read data descriptions and download the dataset from kaggle
 ## Experiment environment
 
 * OS : Debian 9.11
+* Python 3.6
+* GPU : TITAN RTX (24G RAM)
+* CPU : Core i7-9800X
