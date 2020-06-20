@@ -1,5 +1,5 @@
 # FNP task1
-*Binary classification task
+* Binary classification task
 
 *Text section contains a causal relation => 1, Otherwise => 0
 
