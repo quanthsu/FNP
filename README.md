@@ -1,4 +1,4 @@
-# FNP task1
+# [FNP](https://github.com/yseop/YseopLab/blob/develop/FNP_2020_FinCausal/AnnotationScheme.pdf) task1
 Binary classification task
 
 Text section contains a causal relation => 1, Otherwise => 0
