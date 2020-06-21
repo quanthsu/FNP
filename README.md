@@ -21,7 +21,7 @@ Read data descriptions and download the dataset from kaggle
 
 4. Train the models via `xlnet_pseudo.py` with XLNet, Focal Loss & pseudo-label.
 
-5. Submit the result `final_preditcion`.
+5. Submit the result `final_preditcion.csv`.
 
 
 ## Experiment environment
