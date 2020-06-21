@@ -6,3 +6,5 @@ pandas
 nltk
 funcy
 python-crfsuite
+torch
+torchsnooper

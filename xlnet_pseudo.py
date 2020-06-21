@@ -45,7 +45,7 @@ MAX_LEN = 512
 
 
 # Load the dataset into a pandas dataframe.
-df = pd.read_csv("data/train_pseudo.tsv", delimiter='\t', header=None, names=['id', 'label', 'alpha', 'sentence'])
+df = pd.read_csv("data/train_ps.tsv", delimiter='\t', header=None, names=['id', 'label', 'alpha', 'sentence'])
 dev_df = pd.read_csv("data/dev_real.tsv", delimiter='\t', header=None, names=['id', 'label', 'alpha', 'sentence'])
 
 # Load the dataset into a pandas dataframe.
@@ -65,18 +65,11 @@ dev_labels = dev_df.label.values
 
 # Load the BERT tokenizer.
 print('Loading tokenizer...')
-tokenizer = BertTokenizer.from_pretrained('bert-large-uncased', do_lower_case=True)
-#tokenizer = XLNetTokenizer.from_pretrained('xlnet-large-cased')
+#tokenizer = BertTokenizer.from_pretrained('bert-large-uncased', do_lower_case=True)
+tokenizer = XLNetTokenizer.from_pretrained('xlnet-large-cased')
 
-model = BertForSequenceClassification.from_pretrained(
-    "bert-large-uncased", # Use the 12-layer BERT model, with an uncased vocab.
-    num_labels = 2, # The number of output labels--2 for binary classification.
-                    # You can increase this for multi-class tasks.   
-    output_attentions = False, # Whether the model returns attentions weights.
-    output_hidden_states = False, # Whether the model returns all hidden-states.
-)
 
-#model = XLNetForSequenceClassification.from_pretrained('xlnet-large-cased')
+model = XLNetForSequenceClassification.from_pretrained('xlnet-large-cased')
 
 def evaluate(y_true, y_pred):
     """
@@ -237,7 +230,7 @@ for p in params[-4:]:
     
 
 optimizer = AdamW(model.parameters(),
-                  lr = 2e-5, # args.learning_rate - default is 5e-5, our notebook had 2e-5
+                  lr = 5e-5, # args.learning_rate - default is 5e-5, our notebook had 2e-5
                   eps = 1e-8 # args.adam_epsilon  - default is 1e-8.
                 )
 
@@ -271,7 +264,7 @@ def format_time(elapsed):
     
 
 # Set the seed value all over the place to make this reproducible.
-seed_val = 42
+seed_val = 20
 
 random.seed(seed_val)
 np.random.seed(seed_val)
@@ -541,7 +534,7 @@ prediction_masks = torch.tensor(test_attention_masks)
 prediction_labels = torch.tensor(test_labels).to(torch.int64)
 
 # Set the batch size.  
-batch_size = 8  
+#batch_size = 8  
 
 # Create the DataLoader.
 prediction_data = TensorDataset(prediction_inputs, prediction_masks, prediction_labels)
